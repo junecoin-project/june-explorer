@@ -15,13 +15,13 @@
   // coin symbol
   "symbol": "JUC",
 
-  // logo
-  "logo": "/images/logo.png",
+// logo
+  "logo": "/images/june.png",
   // Optional header logo - change false to e.g. "/images/headerlogo.png"
-  "headerlogo": false,
+  "headerlogo": "/images/june-logo.png",
 
   // favicon
-  "favicon": "public/favicon.ico",
+  "favicon": "public/june.ico",
 
   // Uses bootswatch themes (http://bootswatch.com/)
   // Valid options:
