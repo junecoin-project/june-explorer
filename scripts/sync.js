@@ -64,9 +64,15 @@ if (process.argv[2] == 'index') {
 
 function create_lock(cb) {
   if ( database == 'index' ) {
+    var dir = './tmp';
+    if (!fs.existsSync(dir)){
+        fs.mkdirSync(dir);
+    }
+
     var fname = './tmp/' + database + '.pid';
-    fs.appendFile(fname, process.pid, function (err) {
+    fs.appendFile(fname, process.pid,function (err) {
       if (err) {
+        console.log(err);
         console.log("Error: unable to create %s", fname);
         process.exit(1);
       } else {
@@ -116,11 +122,11 @@ function exit() {
   });
 }
 
-var dbString = 'mongodb://' + settings.dbsettings.user;
+var dbString = 'mongodb+srv://' + settings.dbsettings.user;
 dbString = dbString + ':' + settings.dbsettings.password;
 dbString = dbString + '@' + settings.dbsettings.address;
-dbString = dbString + ':' + settings.dbsettings.port;
 dbString = dbString + '/' + settings.dbsettings.database;
+dbString = dbString + '?retryWrites=true';
 
 is_locked(function (exists) {
   if (exists) {

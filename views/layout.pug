@@ -28,11 +28,13 @@ html
         $('##{active}').addClass('active');
         function update_stats(){
           $.ajax({url: '/ext/summary', success: function(json){
+            //- console.log(json.data, json.data[0].difficulty);
+
             var supplyString = json.data[0].supply;
             var diffString = json.data[0].difficulty;
             var hashrateString = json.data[0].hashrate;
             if (!isNaN(json.data[0].difficulty)) {
-              diffString = parseFloat(json.data[0].difficulty).toFixed(2);
+              diffString = parseFloat(json.data[0].difficulty).toFixed(6);
             }
             if (!isNaN(json.data[0].supply)) {
               supplyString = parseInt(parseFloat(json.data[0].supply).toFixed(0)).toLocaleString('en');
@@ -123,7 +125,7 @@ html
           span.navbar-toggler-icon 
         a.navbar-brand(href='/')
           if typeof settings.headerlogo !== "undefined" && settings.headerlogo && settings.headerlogo.length > 1
-            img(src=settings.headerlogo, style='width:153px;height:45px;')
+            img(src=settings.headerlogo, style='width:106px;height:45px;')
           else
             =settings.title
       .collapse.navbar-collapse(id='navbar-collapse')
@@ -140,7 +142,7 @@ html
           if settings.display.movement == true
             li#movement
               a.nav-link.loading(href='/movement')
-                span.fa.fa-money
+                span.fa.fa-exchange
                 span.menu-text #{settings.locale.menu_movement}
           if settings.display.network == true
             li#network
@@ -150,7 +152,7 @@ html
           if settings.display.richlist == true
             li#richlist
               a.nav-link(href='/richlist')
-                span.fa.fa-btc
+                span.fa.fa-star
                 span.menu-text #{settings.locale.menu_richlist}
           if settings.display.markets == true
             li#markets
@@ -160,7 +162,7 @@ html
           if settings.display.api == true
             li#info
               a.nav-link(href='/info')
-                span.fa.fa-info-circle
+                span.fa.fa-bolt
                 span.menu-text #{settings.locale.menu_api}
     .col-md-12
       .row.text-center.d-flex.justify-content-center
@@ -272,7 +274,7 @@ html
         ul.nav.justify-content-center
           li.text-center(style='margin-left:80px;margin-right:80px;')
             p(style='')
-              a.nav-link.poweredby(href='https://github.com/iquidus/explorer', target='_blank') Powered by Iquidus Explorer v#{settings.iquidus_version}
+              a.nav-link.poweredby(href='https://github.com/iquidus/explorer', target='_blank') Powered by June Explorer v#{settings.iquidus_version}
       .col-md-4.navbar-nav
         ui.nav.justify-content-end
           label#lblBlockcount.badge.badge-pill.nav-link

@@ -5,15 +5,15 @@
 */
 {
   // name your instance!
-  "title": "IQUIDUS",
+  "title": "JUNE EXPLORER",
 
   "address": "127.0.0.1:3001",
 
   // coin name
-  "coin": "Darkcoin",
+  "coin": "Junecoin",
 
   // coin symbol
-  "symbol": "DRK",
+  "symbol": "JUC",
 
   // logo
   "logo": "/images/logo.png",
@@ -29,18 +29,17 @@
   //     Lux, Materia, Minty, Pulse, Sandstone, Simplex, Sketchy, Slate, 
   //     Solar, Spacelab, Superhero, United, Yeti
   // theme (see /public/themes for available themes)
-  "theme": "Cyborg",
+  "theme": "Lumen",
 
   // port to listen for requests on.
   "port" : 3001,
 
   // database settings (MongoDB)
   "dbsettings": {
-    "user": "iquidus",
-    "password": "3xp!0reR",
-    "database": "explorerdb",
-    "address": "localhost",
-    "port": 27017
+    "user": "dbuser",
+    "password": "dbpass",
+    "address": "dbaddress",
+    "database": "junecoin"
   },
 
   //update script settings
@@ -52,10 +51,10 @@
   "use_rpc": true,
 
   "wallet": {
-    "host": "localhost",
-    "port": 9332,
-    "username": "darkcoinrpc",
-    "password": "123gfjk3R3pCCVjHtbRde2s5kzdf233sa"
+    "host": "192.168.1.1",
+    "port": 6832,
+    "username": "walletuser",
+    "password": "walletpass"
   },
 
   // confirmations
@@ -95,10 +94,10 @@
 
   // ensure links on API page are valid
   "api": {
-    "blockindex": 1337,
-    "blockhash": "1733320247b15ca2262be646397d1ffd6be953fa638ebb8f5dcbb4c2b91b34f1",
-    "txhash": "f270cd3813254c9922a2e222a56ba745842d9112223a1394062e460b33d27b7e",
-    "address": "RBiXWscC63Jdn1GfDtRj8hgv4Q6Zppvpwb"
+    "blockindex": 0,
+    "blockhash": "627264f4b13ab6fd2faa8a9f6817e2f9dc425cc4b2acdf9ae63973ba5cf185d5",
+    "txhash": "455baddf10773d1af10378c44f74ab333c16cbe8fc8d1a7ae71d7f3ccdac0212",
+    "address": "RBiXWscC63Jdn1GfDtRj8hgv4Q6Zppvpwb",
   },
 
   // market settings
@@ -135,8 +134,8 @@
   "youtube": "youryoutubechannel",
 
   //genesis
-  "genesis_tx": "65f705d2f385dc85763a317b3ec000063003d6b039546af5d8195a5ec27ae410",
-  "genesis_block": "b2926a56ca64e0cd2430347e383f63ad7092f406088b9b86d6d68c2a34baef51",
+  "genesis_tx": "455baddf10773d1af10378c44f74ab333c16cbe8fc8d1a7ae71d7f3ccdac0212",
+  "genesis_block": "627264f4b13ab6fd2faa8a9f6817e2f9dc425cc4b2acdf9ae63973ba5cf185d5",
 
   //heavy (enable/disable additional heavy features)
   "heavy": false,

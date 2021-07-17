@@ -11,11 +11,11 @@ function exit() {
   process.exit(0);
 }
 
-var dbString = 'mongodb://' + settings.dbsettings.user;
+var dbString = 'mongodb+srv://' + settings.dbsettings.user;
 dbString = dbString + ':' + settings.dbsettings.password;
 dbString = dbString + '@' + settings.dbsettings.address;
-dbString = dbString + ':' + settings.dbsettings.port;
 dbString = dbString + '/' + settings.dbsettings.database;
+dbString = dbString + '?retryWrites=true';
 
 mongoose.connect(dbString, function(err) {
   if (err) {
